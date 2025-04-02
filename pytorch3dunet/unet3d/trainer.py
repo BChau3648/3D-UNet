@@ -4,6 +4,8 @@ import torch.nn as nn
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime
+import matplotlib.pyplot as plt
+import pickle
 
 from pytorch3dunet.datasets.utils import get_train_loaders
 from pytorch3dunet.unet3d.losses import get_loss_criterion
@@ -71,11 +73,11 @@ class UNetTrainer:
         loaders (dict): 'train' and 'val' loaders
         checkpoint_dir (string): dir for saving checkpoints and tensorboard logs
         max_num_epochs (int): maximum number of epochs
-        max_num_iterations (int): maximum number of iterations
-        validate_after_iters (int): validate after that many iterations
-        log_after_iters (int): number of iterations before logging to tensorboard
-        validate_iters (int): number of validation iterations, if None validate
-            on the whole validation set
+        # max_num_iterations (int): maximum number of iterations
+        # validate_after_iters (int): validate after that many iterations
+        # log_after_iters (int): number of iterations before logging to tensorboard
+        # validate_iters (int): number of validation iterations, if None validate
+        #     on the whole validation set
         eval_score_higher_is_better (bool): if True higher eval scores are considered better
         best_eval_score (float): best validation score so far (higher better)
         num_iterations (int): useful when loading the model from the checkpoint
@@ -87,8 +89,8 @@ class UNetTrainer:
     """
 
     def __init__(self, model, optimizer, lr_scheduler, loss_criterion, eval_criterion, loaders, checkpoint_dir,
-                 max_num_epochs, max_num_iterations, validate_after_iters=200, log_after_iters=100, validate_iters=None,
-                 num_iterations=1, num_epoch=0, eval_score_higher_is_better=True, tensorboard_formatter=None,
+                 max_num_epochs, num_iterations=1, num_epoch=0, checkpoint_after_epochs=5,
+                 eval_score_higher_is_better=True, tensorboard_formatter=None,
                  skip_train_validation=False, resume=None, pre_trained=None, **kwargs):
 
         self.model = model
@@ -99,11 +101,11 @@ class UNetTrainer:
         self.loaders = loaders
         self.checkpoint_dir = checkpoint_dir
         self.max_num_epochs = max_num_epochs
-        self.max_num_iterations = max_num_iterations
-        self.validate_after_iters = validate_after_iters
-        self.log_after_iters = log_after_iters
-        self.validate_iters = validate_iters
         self.eval_score_higher_is_better = eval_score_higher_is_better
+        
+        # TODO/ADDON: torch tensor where columns are 1: loss, 2: eval score
+        self.train_stats = torch.zeros((self.max_num_epochs, 2))
+        self.val_stats = torch.zeros((self.max_num_epochs, 2))
 
         logger.info(model)
         logger.info(f'eval_score_higher_is_better: {eval_score_higher_is_better}')
@@ -138,6 +140,10 @@ class UNetTrainer:
             self.best_eval_score = state['best_eval_score']
             self.num_iterations = state['num_iterations']
             self.num_epochs = state['num_epochs']
+            # extending loss and eval scores to fit max_num_epochs
+            empty_stats = torch.zeros((self.max_num_epochs - self.num_epochs, 2))
+            self.train_stats = torch.cat([state['train_stats'], empty_stats], dim=0)
+            self.val_stats = torch.cat([state['val_stats'], empty_stats], dim=0)
             self.checkpoint_dir = os.path.split(resume)[0]
         elif pre_trained is not None:
             logger.info(f"Logging pre-trained model from '{pre_trained}'...")
@@ -146,9 +152,32 @@ class UNetTrainer:
                 self.checkpoint_dir = os.path.split(pre_trained)[0]
 
     def fit(self):
-        for _ in range(self.num_epochs, self.max_num_epochs):
+        for epoch in range(self.num_epochs, self.max_num_epochs):
             # train for one epoch
             should_terminate = self.train()
+
+            # set the model in eval mode
+            self.model.eval()
+            # evaluate on validation set
+            eval_score = self.validate()
+            # set the model back to training mode
+            self.model.train()
+
+            # adjust learning rate if necessary
+            if isinstance(self.scheduler, ReduceLROnPlateau):
+                self.scheduler.step(eval_score)
+            elif self.scheduler is not None:
+                self.scheduler.step()
+
+            # log current learning rate in tensorboard
+            self._log_lr()
+            # remember best validation metric
+            is_best = self._is_best_eval_score(eval_score)
+
+            # save checkpoint
+            if is_best or (epoch % self.checkpoint_after_epochs == self.checkpoint_after_epochs - 1):
+                self._save_checkpoint(is_best)  
+                self._save_stats_graph()          
 
             if should_terminate:
                 logger.info('Stopping criterion is satisfied. Finishing training')
@@ -170,7 +199,7 @@ class UNetTrainer:
         self.model.train()
 
         for t in self.loaders['train']:
-            logger.info(f'Training iteration [{self.num_iterations}/{self.max_num_iterations}]. '
+            logger.info(f'Training iteration [{self.num_iterations}]. '
                         f'Epoch [{self.num_epochs}/{self.max_num_epochs - 1}]')
 
             input, target, weight = self._split_training_batch(t)
@@ -184,67 +213,42 @@ class UNetTrainer:
             loss.backward()
             self.optimizer.step()
 
-            if self.num_iterations % self.validate_after_iters == 0:
-                # set the model in eval mode
-                self.model.eval()
-                # evaluate on validation set
-                eval_score = self.validate()
-                # set the model back to training mode
-                self.model.train()
+            # compute eval criterion
+            if not self.skip_train_validation:
+                # apply final activation before calculating eval score
+                if isinstance(self.model, nn.DataParallel):
+                    final_activation = self.model.module.final_activation
+                else:
+                    final_activation = self.model.final_activation
 
-                # adjust learning rate if necessary
-                if isinstance(self.scheduler, ReduceLROnPlateau):
-                    self.scheduler.step(eval_score)
-                elif self.scheduler is not None:
-                    self.scheduler.step()
-
-                # log current learning rate in tensorboard
-                self._log_lr()
-                # remember best validation metric
-                is_best = self._is_best_eval_score(eval_score)
-
-                # save checkpoint
-                self._save_checkpoint(is_best)
-
-            if self.num_iterations % self.log_after_iters == 0:
-                # compute eval criterion
-                if not self.skip_train_validation:
-                    # apply final activation before calculating eval score
-                    if isinstance(self.model, nn.DataParallel):
-                        final_activation = self.model.module.final_activation
-                    else:
-                        final_activation = self.model.final_activation
-
-                    if final_activation is not None:
-                        act_output = final_activation(output)
-                    else:
-                        act_output = output
-                    eval_score = self.eval_criterion(act_output, target)
-                    train_eval_scores.update(eval_score.item(), self._batch_size(input))
-
-                # log stats, params and images
-                logger.info(
-                    f'Training stats. Loss: {train_losses.avg}. Evaluation score: {train_eval_scores.avg}')
-                self._log_stats('train', train_losses.avg, train_eval_scores.avg)
-                # self._log_params()
-                self._log_images(input, target, output, 'train_')
+                if final_activation is not None:
+                    act_output = final_activation(output)
+                else:
+                    act_output = output
+                eval_score = self.eval_criterion(act_output, target)
+                train_eval_scores.update(eval_score.item(), self._batch_size(input))
 
             if self.should_stop():
                 return True
 
             self.num_iterations += 1
 
+        # log stats, params and images
+        logger.info(
+            f'Training stats. Loss: {train_losses.avg}. Evaluation score: {train_eval_scores.avg}')
+        self._log_stats('train', train_losses.avg, train_eval_scores.avg)
+        # self._log_params()
+        # self._log_images(input, target, output, 'train_')
+
+        # TODO/ADDON: updating training statistics
+        self.train_stats[self.num_epochs, :] = torch.tensor((train_losses.avg, train_eval_scores.avg))
+
         return False
 
     def should_stop(self):
         """
-        Training will terminate if maximum number of iterations is exceeded or the learning rate drops below
-        some predefined threshold (1e-6 in our case)
+        Training will terminate if the learning rate drops below some predefined threshold (1e-6 in our case)
         """
-        if self.max_num_iterations < self.num_iterations:
-            logger.info(f'Maximum number of iterations {self.max_num_iterations} exceeded.')
-            return True
-
         min_lr = 1e-6
         lr = self.optimizer.param_groups[0]['lr']
         if lr < min_lr:
@@ -274,12 +278,12 @@ class UNetTrainer:
                 eval_score = self.eval_criterion(output, target)
                 val_scores.update(eval_score.item(), self._batch_size(input))
 
-                if self.validate_iters is not None and self.validate_iters <= i:
-                    # stop validation
-                    break
-
             self._log_stats('val', val_losses.avg, val_scores.avg)
             logger.info(f'Validation finished. Loss: {val_losses.avg}. Evaluation score: {val_scores.avg}')
+            
+            # TODO/ADDON: updating validation statistics
+            self.val_stats[self.num_epochs, :] = torch.tensor((val_losses.avg, val_scores.avg))
+
             return val_scores.avg
 
     def _split_training_batch(self, t):
@@ -348,6 +352,8 @@ class UNetTrainer:
             'model_state_dict': state_dict,
             'best_eval_score': self.best_eval_score,
             'optimizer_state_dict': self.optimizer.state_dict(),
+            'train_stats': self.train_stats, 
+            'val_stats': self.val_stats
         }, is_best, checkpoint_dir=self.checkpoint_dir)
 
     def _log_lr(self):
@@ -395,6 +401,43 @@ class UNetTrainer:
         for name, batch in img_sources.items():
             for tag, image in self.tensorboard_formatter(name, batch):
                 self.writer.add_image(prefix + tag, image, self.num_iterations)
+
+    # TODO/ADDON: creating and saving figures for loss, eval score, learning rate, and time per epoch
+    def _plot_stats(self, stat):
+        # subsetting train and val stats tensors to just losses or eval score
+        col_idx = None
+        if stat.lower() == 'loss':
+            col_idx = 0
+        elif stat.lower() == 'score':
+            col_idx = 1
+        else:
+            raise Exception("stat argument can only be either 'loss' or 'score.'")
+        
+        stat = stat.capitalize()
+        epochs = torch.arange(self.max_num_epochs)
+
+        # plotting figure
+        fig, ax = plt.subplots()
+        ax.plot(epochs, self.train_stats[:, col_idx], color='blue', label=f'Train {stat}')
+        ax.plot(epochs, self.val_stats[:, col_idx], color='red', label=f'Val {stat}')
+        ax.set(xlabel='Epochs', ylabel=stat)
+        ax.legend(loc='upper left', bbox_to_anchor=(1, 1))
+
+        # saving figure and pickling it
+        file_name = os.path.join(self.checkpoint_dir, f'{stat}_Plot')
+        fig.savefig(f'{file_name}.png')
+        with open(f'{file_name}.pkl', 'wb') as f:
+            pickle.dump(fig, f)
+
+    def _save_stats_graph(self):
+        self._plot_stats('loss')
+        self._plot_stats('score')
+
+    def _save_lr_graph():    
+        pass 
+
+    def _save_time_per_epoch_graph():
+        pass
 
     @staticmethod
     def _batch_size(input):
