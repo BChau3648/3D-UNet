@@ -1,0 +1,26 @@
+universe=docker
+
+docker_image = registry.cvib.ucla.edu/blchau:3dnet
+docker_pull_policy = always
+
+executable = ./train_model.sh
+arguments = ./train_config.yaml
+transfer_input_files = ./train_config.yaml
+
+should_transfer_files = YES
+
+when_to_transfer_output = ON_EXIT
+
+output = ./joblog/$(cluster).$(process).out
+error = ./joblog/$(cluster).$(process).err
+log = ./joblog/$(cluster).$(process).log
+
+request_cpus = 1
+request_gpus = 1
+request_memory = 25GB
+request_disk = 500MB
+requirements = (OpSys == "LINUX" && Arch == "X86_64" && GPUMEM > 16000)
++WantGPULab = true
++GPUJobLength = "short"
+
+queue
