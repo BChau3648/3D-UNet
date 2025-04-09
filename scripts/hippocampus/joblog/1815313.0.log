@@ -1,0 +1,74 @@
+000 (1815313.000.000) 2025-04-06 15:27:37 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2957_d5a3>
+...
+040 (1815313.000.000) 2025-04-06 15:28:09 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_1_4412_672c_15291>
+...
+040 (1815313.000.000) 2025-04-06 15:28:09 Finished transferring input files
+...
+001 (1815313.000.000) 2025-04-06 15:28:10 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3637_4209>
+	SlotName: slot1_1@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_814f208a }
+	CondorScratchDir = "/var/lib/condor/execute/dir_2338649"
+	Cpus = 1
+	Disk = 207626
+	GPUs = 1
+	GPUs_GPU_814f208a = [ Id = "GPU-814f208a"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "814f208a-0084-e091-cffb-dc81d3df4ee3"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 16384
+...
+006 (1815313.000.000) 2025-04-06 15:33:18 Image size of job updated: 9808
+	9808  -  MemoryUsage of job (MB)
+	10043808  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 15:38:18 Image size of job updated: 10103
+	10103  -  MemoryUsage of job (MB)
+	10345796  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 15:43:18 Image size of job updated: 10541
+	10541  -  MemoryUsage of job (MB)
+	10794676  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 15:48:18 Image size of job updated: 10550
+	10550  -  MemoryUsage of job (MB)
+	10804072  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 15:53:18 Image size of job updated: 10656
+	10656  -  MemoryUsage of job (MB)
+	10912432  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 15:58:19 Image size of job updated: 10729
+	10729  -  MemoryUsage of job (MB)
+	10986644  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 16:03:20 Image size of job updated: 10750
+	10750  -  MemoryUsage of job (MB)
+	11008792  -  ResidentSetSize of job (KB)
+...
+006 (1815313.000.000) 2025-04-06 16:05:40 Image size of job updated: 10751
+	10751  -  MemoryUsage of job (MB)
+	11009788  -  ResidentSetSize of job (KB)
+...
+040 (1815313.000.000) 2025-04-06 16:05:40 Started transferring output files
+...
+040 (1815313.000.000) 2025-04-06 16:05:40 Finished transferring output files
+...
+005 (1815313.000.000) 2025-04-06 16:05:40 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 01:24:01, Sys 0 00:02:40  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 01:24:01, Sys 0 00:02:40  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	217877  -  Run Bytes Sent By Job
+	5011  -  Run Bytes Received By Job
+	217877  -  Total Bytes Sent By Job
+	5011  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         1 
+	   Disk (KB)            :   262      204800    207626 
+	   GPUs                 :     0.58        1         1 "GPU-814f208a"
+	   GpusMemory (MB)      : 12601                       
+	   Memory (MB)          : 10751       16384     16384 
+	   TimeExecute (s)      :  2250                       
+	   TimeSlotBusy (s)     :  2251                       
+
+	Job terminated of its own accord at 2025-04-06T23:05:40Z with exit-code 1.
+...

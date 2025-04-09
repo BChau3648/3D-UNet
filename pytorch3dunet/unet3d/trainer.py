@@ -101,6 +101,7 @@ class UNetTrainer:
         self.loaders = loaders
         self.checkpoint_dir = checkpoint_dir
         self.max_num_epochs = max_num_epochs
+        self.checkpoint_after_epochs = checkpoint_after_epochs
         self.eval_score_higher_is_better = eval_score_higher_is_better
         
         # TODO/ADDON: torch tensor where columns are 1: loss, 2: eval score
