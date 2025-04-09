@@ -105,8 +105,8 @@ class UNetTrainer:
         self.eval_score_higher_is_better = eval_score_higher_is_better
         
         # TODO/ADDON: torch tensor where columns are 1: loss, 2: eval score
-        self.train_stats = torch.zeros((self.max_num_epochs, 2))
-        self.val_stats = torch.zeros((self.max_num_epochs, 2))
+        self.train_stats = torch.full((self.max_num_epochs, 2), float('nan'))
+        self.val_stats = torch.full((self.max_num_epochs, 2), float('nan'))
 
         logger.info(model)
         logger.info(f'eval_score_higher_is_better: {eval_score_higher_is_better}')
@@ -142,7 +142,7 @@ class UNetTrainer:
             self.num_iterations = state['num_iterations']
             self.num_epochs = state['num_epochs']
             # extending loss and eval scores to fit max_num_epochs
-            empty_stats = torch.zeros((self.max_num_epochs - self.num_epochs, 2))
+            empty_stats = torch.full((self.max_num_epochs - self.num_epochs, 2), float('nan'))
             self.train_stats = torch.cat([state['train_stats'], empty_stats], dim=0)
             self.val_stats = torch.cat([state['val_stats'], empty_stats], dim=0)
             self.checkpoint_dir = os.path.split(resume)[0]
