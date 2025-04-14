@@ -17,8 +17,8 @@ log = /radraid/blchau/3D-UNet/scripts/hippocampus/joblog/$(cluster).$(process).l
 
 request_cpus = 1
 request_gpus = 1
-request_memory = 16GB
-request_disk = 200MB
+# request_memory = 16GB
+# request_disk = 200MB
 requirements = (OpSys == "LINUX" && Arch == "X86_64" && GPUMEM > 16000)
 +WantGPULab = true
 +GPUJobLength = "short"

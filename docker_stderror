@@ -1,0 +1,56 @@
+3dnet: Pulling from blchau
+43f89b94cd7d: Already exists
+5e3b7ee77381: Already exists
+5bd037f007fd: Already exists
+4cda774ad2ec: Already exists
+775f22adee62: Already exists
+263fc748118f: Already exists
+16c36d0187d0: Already exists
+e7a56570655c: Already exists
+507fc9045cba: Already exists
+23b7d8e07c16: Already exists
+922ac8fcb889: Already exists
+4d63b9022b74: Pulling fs layer
+81f089884070: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+9c9853947043: Pulling fs layer
+e7d71edb6fe4: Pulling fs layer
+05fcf071cbf5: Pulling fs layer
+5cd550437c1b: Pulling fs layer
+e2bf96740725: Pulling fs layer
+9c9853947043: Waiting
+7cdfb25d4d15: Pulling fs layer
+5cd550437c1b: Waiting
+e2bf96740725: Waiting
+7cdfb25d4d15: Waiting
+e7d71edb6fe4: Waiting
+05fcf071cbf5: Waiting
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+9c9853947043: Verifying Checksum
+9c9853947043: Download complete
+4d63b9022b74: Verifying Checksum
+4d63b9022b74: Download complete
+e7d71edb6fe4: Verifying Checksum
+e7d71edb6fe4: Download complete
+4d63b9022b74: Pull complete
+5cd550437c1b: Verifying Checksum
+5cd550437c1b: Download complete
+e2bf96740725: Verifying Checksum
+e2bf96740725: Download complete
+7cdfb25d4d15: Verifying Checksum
+7cdfb25d4d15: Download complete
+05fcf071cbf5: Verifying Checksum
+05fcf071cbf5: Download complete
+81f089884070: Verifying Checksum
+81f089884070: Download complete
+81f089884070: Pull complete
+4f4fb700ef54: Pull complete
+9c9853947043: Pull complete
+e7d71edb6fe4: Pull complete
+05fcf071cbf5: Pull complete
+5cd550437c1b: Pull complete
+e2bf96740725: Pull complete
+7cdfb25d4d15: Pull complete
+Digest: sha256:ed985476989f416125bdd7ce11882d16382983a0762bd13c625b2875189ec8cd
+Status: Downloaded newer image for registry.cvib.ucla.edu/blchau:3dnet
