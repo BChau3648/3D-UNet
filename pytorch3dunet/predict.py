@@ -40,7 +40,8 @@ def main():
     logger.info(f'Loading model from {model_path}...')
     utils.load_checkpoint(model_path, model)
     # use DataParallel if more than 1 GPU available
-
+    print(f"Number of devices available: {torch.cuda.device_count()}")
+    print(f"Type of device: {config['device']}")
     if torch.cuda.device_count() > 1 and not config['device'] == 'cpu':
         model = nn.DataParallel(model)
         logger.info(f'Using {torch.cuda.device_count()} GPUs for prediction')

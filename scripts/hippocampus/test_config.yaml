@@ -1,0 +1,42 @@
+model_path: /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/best_checkpoint.pytorch
+model:
+  name: UNet3D
+  # number of input channels to the model
+  in_channels: 1
+  # number of output channels
+  out_channels: 3
+  # determines the order of operators in a single layer (crg - Conv3d+ReLU+GroupNorm)
+  layer_order: crg
+  # initial number of feature maps
+  f_maps: 32
+  # number of groups in the groupnorm
+  num_groups: 8
+  # apply element-wise nn.Sigmoid after the final 1x1x1 convolution, otherwise apply nn.Softmax
+  final_sigmoid: false 
+  is_segmentation: true 
+predictor:
+  name: 'StandardPredictor'
+loaders:
+  # save predictions to output_dir
+  output_dir: /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/predictions
+  # batch dimension; if number of GPUs is N > 1, then a batch_size of N * batch_size will automatically be taken for DataParallel
+  batch_size: 16
+  # how many subprocesses to use for data loading
+  num_workers: 2
+  # test loaders configuration
+  test:
+    file_paths:
+      - '/radraid/blchau/data/Task04_Hippocampus/preprocessed/test'
+
+    slice_builder:
+      name: SliceBuilder
+      patch_shape: [ 80, 64, 64]
+      stride_shape: [ 15, 25, 25]
+      # halo around each patch
+      halo_shape: [ 16, 32, 32 ]
+
+    transformer:
+      raw:
+        - name: Standardize
+        - name: ToTensor
+          expand_dims: true
