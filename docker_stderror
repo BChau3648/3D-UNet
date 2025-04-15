@@ -18,20 +18,18 @@ e7d71edb6fe4: Pulling fs layer
 05fcf071cbf5: Pulling fs layer
 5cd550437c1b: Pulling fs layer
 e2bf96740725: Pulling fs layer
-9c9853947043: Waiting
 7cdfb25d4d15: Pulling fs layer
+e7d71edb6fe4: Waiting
+05fcf071cbf5: Waiting
 5cd550437c1b: Waiting
 e2bf96740725: Waiting
 7cdfb25d4d15: Waiting
-e7d71edb6fe4: Waiting
-05fcf071cbf5: Waiting
-4f4fb700ef54: Verifying Checksum
+9c9853947043: Waiting
 4f4fb700ef54: Download complete
-9c9853947043: Verifying Checksum
-9c9853947043: Download complete
 4d63b9022b74: Verifying Checksum
 4d63b9022b74: Download complete
-e7d71edb6fe4: Verifying Checksum
+9c9853947043: Verifying Checksum
+9c9853947043: Download complete
 e7d71edb6fe4: Download complete
 4d63b9022b74: Pull complete
 5cd550437c1b: Verifying Checksum

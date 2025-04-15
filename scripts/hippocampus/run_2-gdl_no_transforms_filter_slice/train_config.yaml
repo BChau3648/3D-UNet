@@ -1,0 +1,112 @@
+model:
+  name: UNet3D
+  # number of input channels to the model
+  in_channels: 1
+  # number of output channels
+  out_channels: 3
+  # determines the order of operators in a single layer (crg - Conv3d+ReLU+GroupNorm)
+  layer_order: crg
+  # initial number of feature maps
+  f_maps: 32
+  # number of groups in the groupnorm
+  num_groups: 8
+  # apply element-wise nn.Sigmoid after the final 1x1x1 convolution, otherwise apply nn.Softmax
+  final_sigmoid: false
+  # if True applies the final normalization layer (sigmoid or softmax), otherwise the networks returns the output from the final convolution layer; use False for regression problems, e.g. de-noising
+  is_segmentation: true
+# loss function to be used during training
+loss:
+  name: GeneralizedDiceLoss
+  # a target value that is ignored and does not contribute to the input gradient
+  ignore_index: null
+  # skip the last channel in the target (i.e. when last channel contains data not relevant for the loss)
+  skip_last_target: false
+  normalization: softmax
+optimizer:
+  # initial learning rate
+  learning_rate: 0.0002
+  # weight decay
+  weight_decay: 0.00001
+# evaluation metric
+eval_metric:
+  # use Dice score metric
+  name: DiceCoefficient
+lr_scheduler:
+  name: ReduceLROnPlateau
+  # TODO: may need to tune factor and patience
+  # make sure to use the 'max' mode cause higher Dice metric is better
+  mode: max
+  factor: 0.5
+  patience: 30
+trainer:
+  # model with higher eval score is considered better
+  eval_score_higher_is_better: True
+  # path to the checkpoint directory
+  checkpoint_dir: /radraid/blchau/3D-UNet/scripts/hippocampus/run_2-gdl_no_transforms_filter_slice/checkpoints
+  # path to latest checkpoint; if provided the training will be resumed from that checkpoint
+  resume: null
+  # path to the best_checkpoint.pytorch; to be used for fine-tuning the model with additional ground truth
+  pre_trained: null
+  # max number of epochs
+  max_num_epochs: 100
+# Configure training and validation loaders
+loaders:
+  # TODO: tune batch size, transforms, and slices
+  # batch size
+  batch_size: 16
+  # how many subprocesses to use for data loading
+  num_workers: 2
+  # path to the raw data within the H5
+  raw_internal_path: raw
+  # path to  the label data within the H5
+  label_internal_path: label
+  # configuration of the train loader
+  train:
+    # path to the training datasets
+    file_paths:
+      - '/radraid/blchau/data/Task04_Hippocampus/preprocessed/train'
+
+    # SliceBuilder configuration, i.e. how to iterate over the input volume patch-by-patch
+    slice_builder:
+      name: FilterSliceBuilder
+      # train patch size given to the network (adapt to fit in your GPU mem, generally the bigger patch the better)
+      patch_shape: [80, 64, 64]
+      # train stride between patches
+      stride_shape: [20, 16, 16]
+      # minimum volume of the labels in the patch
+      threshold: 0.01
+      # probability of accepting patches which do not fulfil the threshold criterion
+      slack_acceptance: 0.01
+
+    transformer:
+      raw:
+        - name: Standardize
+        - name: ToTensor
+          expand_dims: true
+      label:
+        - name: ToTensor
+          expand_dims: false
+
+  # configuration of the val loader
+  val:
+    # path to the val datasets
+    file_paths:
+      - '/radraid/blchau/data/Task04_Hippocampus/preprocessed/val'
+
+    # SliceBuilder configuration, i.e. how to iterate over the input volume patch-by-patch
+    slice_builder:
+      name: SliceBuilder
+      # train patch size given to the network (adapt to fit in your GPU mem, generally the bigger patch the better)
+      patch_shape: [80, 64, 64]
+      # train stride between patches
+      stride_shape: [80, 64, 64]
+
+    # data augmentation
+    transformer:
+      raw:
+        - name: Standardize
+        - name: ToTensor
+          expand_dims: true
+      label:
+        - name: ToTensor
+          expand_dims: false

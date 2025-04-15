@@ -1,0 +1,46 @@
+000 (1815351.000.000) 2025-04-14 19:06:12 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815351.000.000) 2025-04-14 19:06:20 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_1_4369_1b0b_2736>
+...
+040 (1815351.000.000) 2025-04-14 19:06:20 Finished transferring input files
+...
+001 (1815351.000.000) 2025-04-14 19:06:21 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3632_d410>
+	SlotName: slot1_1@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_814f208a }
+	CondorScratchDir = "/var/lib/condor/execute/dir_3951861"
+	Cpus = 1
+	Disk = 3765
+	GPUs = 1
+	GPUs_GPU_814f208a = [ Id = "GPU-814f208a"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "814f208a-0084-e091-cffb-dc81d3df4ee3"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 43008
+...
+006 (1815351.000.000) 2025-04-14 19:09:45 Image size of job updated: 962
+	962  -  MemoryUsage of job (MB)
+	986036  -  ResidentSetSize of job (KB)
+...
+040 (1815351.000.000) 2025-04-14 19:09:45 Started transferring output files
+...
+040 (1815351.000.000) 2025-04-14 19:09:45 Finished transferring output files
+...
+005 (1815351.000.000) 2025-04-14 19:09:45 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	73795  -  Run Bytes Sent By Job
+	1799  -  Run Bytes Received By Job
+	73795  -  Total Bytes Sent By Job
+	1799  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :       94        3      3765 
+	   GPUs                 :        0        1         1 "GPU-814f208a"
+	   GpusMemory (MB)      :      753                    
+	   Memory (MB)          :      962    42988     43008 
+	   TimeExecute (s)      :      204                    
+	   TimeSlotBusy (s)     :      205                    
+
+	Job terminated of its own accord at 2025-04-15T02:09:45Z with exit-code 0.
+...
