@@ -1,4 +1,6 @@
 todo:
+split train and val set and run training (check patch size first)
+
 check transformations on data
 
 use 2 gpu with maybe 10gb of memory
