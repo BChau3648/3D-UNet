@@ -16,3 +16,6 @@ logs/
 # Python packages
 pytorch3dunet.egg-info/
 dist/
+
+# preprocessing stats
+scripts/kidney/preprocess/preprocess_stats.npz

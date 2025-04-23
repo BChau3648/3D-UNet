@@ -1,0 +1,2 @@
+train, /radraid/blchau/Brian_nnUNet/data/nnUNet_raw/Dataset248_UCLA/imagesTr, /radraid/blchau/Brian_nnUNet/data/nnUNet_raw/Dataset248_UCLA/labelsTr, /radraid/blchau/3D-UNet/scripts/kidney/preprocess/preprocess_stats.npz, /radraid/blchau/data/UCLA/preprocessed/train
+test, /radraid/blchau/Brian_nnUNet/data/nnUNet_raw/Dataset248_UCLA/imagesTs, /radraid/blchau/Brian_nnUNet/data/nnUNet_raw/Dataset248_UCLA/labelsTs, /radraid/blchau/3D-UNet/scripts/kidney/preprocess/preprocess_stats.npz, /radraid/blchau/data/UCLA/preprocessed/test

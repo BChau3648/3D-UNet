@@ -1,0 +1,107 @@
+000 (1815365.000.000) 2025-04-22 10:11:05 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815365.000.000) 2025-04-22 13:46:38 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_1_4369_1b0b_6840>
+...
+040 (1815365.000.000) 2025-04-22 13:46:38 Finished transferring input files
+...
+001 (1815365.000.000) 2025-04-22 13:46:39 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3632_d410>
+	SlotName: slot1_1@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_814f208a }
+	CondorScratchDir = "/var/lib/condor/execute/dir_239937"
+	Cpus = 1
+	Disk = 12981
+	GPUs = 1
+	GPUs_GPU_814f208a = [ Id = "GPU-814f208a"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "814f208a-0084-e091-cffb-dc81d3df4ee3"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 12288
+...
+006 (1815365.000.000) 2025-04-22 13:46:47 Image size of job updated: 287
+	287  -  MemoryUsage of job (MB)
+	294316  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 13:51:47 Image size of job updated: 9989
+	9989  -  MemoryUsage of job (MB)
+	10229344  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 13:56:47 Image size of job updated: 10174
+	10174  -  MemoryUsage of job (MB)
+	10418316  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:01:48 Image size of job updated: 10473
+	10473  -  MemoryUsage of job (MB)
+	10725116  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:06:48 Image size of job updated: 10724
+	10724  -  MemoryUsage of job (MB)
+	10982124  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:31:51 Image size of job updated: 10746
+	10746  -  MemoryUsage of job (MB)
+	11004780  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:36:51 Image size of job updated: 10757
+	10757  -  MemoryUsage of job (MB)
+	11016180  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:41:52 Image size of job updated: 10759
+	10759  -  MemoryUsage of job (MB)
+	11018228  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:46:53 Image size of job updated: 10761
+	10761  -  MemoryUsage of job (MB)
+	11019748  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 14:51:53 Image size of job updated: 10762
+	10762  -  MemoryUsage of job (MB)
+	11020348  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 15:01:55 Image size of job updated: 10766
+	10766  -  MemoryUsage of job (MB)
+	11024632  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 15:46:59 Image size of job updated: 10794
+	10794  -  MemoryUsage of job (MB)
+	11053952  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 16:32:02 Image size of job updated: 10799
+	10799  -  MemoryUsage of job (MB)
+	11058252  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 17:42:09 Image size of job updated: 10800
+	10800  -  MemoryUsage of job (MB)
+	11059740  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 18:17:13 Image size of job updated: 10823
+	10823  -  MemoryUsage of job (MB)
+	11083320  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 19:17:19 Image size of job updated: 10824
+	10824  -  MemoryUsage of job (MB)
+	11083872  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 19:22:19 Image size of job updated: 10825
+	10825  -  MemoryUsage of job (MB)
+	11084972  -  ResidentSetSize of job (KB)
+...
+006 (1815365.000.000) 2025-04-22 19:47:23 Image size of job updated: 10834
+	10834  -  MemoryUsage of job (MB)
+	11094952  -  ResidentSetSize of job (KB)
+...
+004 (1815365.000.000) 2025-04-22 20:47:50 Job was evicted.
+	(0) CPU times
+		Usr 0 16:52:03, Sys 0 00:30:57  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	4941  -  Run Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         1 
+	   Disk (KB)            :  1611       10240     12981 
+	   GPUs                 :     0.62        1         1 "GPU-814f208a"
+	   GpusMemory (MB)      : 12601                       
+	   Memory (MB)          : 10834       12288     12288 
+	   TimeExecute (s)      : 25271                       
+	   TimeSlotBusy (s)     : 25272                       
+...
+009 (1815365.000.000) 2025-04-22 20:47:50 Job was aborted.
+	via condor_rm (by user blchau)
+...
