@@ -1,2 +1,2 @@
 #!/bin/bash
-python preprocess.py -i $1 -l $2 -s $3 -o $4
+python split_train_val.py --train_path $1 --val_path $2

@@ -1,0 +1,84 @@
+000 (1815385.000.000) 2025-04-24 01:29:34 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815385.000.000) 2025-04-24 01:30:27 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_2_4369_1b0b_8754>
+...
+040 (1815385.000.000) 2025-04-24 01:30:27 Finished transferring input files
+...
+001 (1815385.000.000) 2025-04-24 01:30:28 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3632_d410>
+	SlotName: slot1_2@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_41bf3322,GPUs_GPU_bc66d487 }
+	CondorScratchDir = "/var/lib/condor/execute/dir_2630723"
+	Cpus = 1
+	Disk = 7861
+	GPUs = 2
+	GPUs_GPU_41bf3322 = [ Id = "GPU-41bf3322"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "41bf3322-8dad-0c76-9c48-b3dfc78473e9"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1C:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	GPUs_GPU_bc66d487 = [ Id = "GPU-bc66d487"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "bc66d487-17f4-93c0-fbd2-861036027fa1"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1D:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 51200
+...
+006 (1815385.000.000) 2025-04-24 01:30:37 Image size of job updated: 268
+	268  -  MemoryUsage of job (MB)
+	274768  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 01:35:37 Image size of job updated: 26558
+	26558  -  MemoryUsage of job (MB)
+	27195432  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 01:40:37 Image size of job updated: 31337
+	31337  -  MemoryUsage of job (MB)
+	32089164  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 01:45:37 Image size of job updated: 34462
+	34462  -  MemoryUsage of job (MB)
+	35289764  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 01:50:38 Image size of job updated: 39289
+	39289  -  MemoryUsage of job (MB)
+	40232044  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 01:55:39 Image size of job updated: 41752
+	41752  -  MemoryUsage of job (MB)
+	42754168  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 02:00:40 Image size of job updated: 46387
+	46387  -  MemoryUsage of job (MB)
+	47500984  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 02:05:40 Image size of job updated: 48163
+	48163  -  MemoryUsage of job (MB)
+	49319380  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 02:10:41 Image size of job updated: 50884
+	50884  -  MemoryUsage of job (MB)
+	52105600  -  ResidentSetSize of job (KB)
+...
+006 (1815385.000.000) 2025-04-24 02:15:42 Image size of job updated: 51199
+	51199  -  MemoryUsage of job (MB)
+	52428216  -  ResidentSetSize of job (KB)
+...
+021 (1815385.000.000) 2025-04-24 02:23:43 Error from starter on slot1_2@REDLRADADM14959.ad.medctr.ucla.edu:
+	Docker job has gone over memory limit of 51200 Mb
+	Code 34 Subcode 0
+...
+004 (1815385.000.000) 2025-04-24 02:23:43 Job was evicted.
+	(0) CPU times
+		Usr 0 00:41:13, Sys 0 00:11:51  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	4856  -  Run Bytes Received By Job
+	Error from slot1_2@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 51200 Mb
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         1 
+	   Disk (KB)            :   831        5120      7861 
+	   GPUs                 :     0           2         2 "GPU-41bf3322,GPU-bc66d487"
+	   GpusMemory (MB)      :   753                       
+	   Memory (MB)          : 51199       51200     51200 
+	   TimeSlotBusy (s)     :  3196                       
+...
+012 (1815385.000.000) 2025-04-24 02:23:43 Job was held.
+	Error from slot1_2@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 51200 Mb
+	Code 34 Subcode 0
+...
+009 (1815385.000.000) 2025-04-24 12:30:32 Job was aborted.
+	via condor_rm (by user blchau)
+...

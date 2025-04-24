@@ -1,0 +1,38 @@
+000 (1815388.000.000) 2025-04-24 12:25:20 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815388.000.000) 2025-04-24 12:25:42 Started transferring input files
+	Transferring to host: <10.9.146.107:9618?addrs=10.9.146.107-9618&alias=REDLRADADM23621.ad.medctr.ucla.edu&noUDP&sock=slot1_1_2547_5781_5497>
+...
+040 (1815388.000.000) 2025-04-24 12:25:42 Finished transferring input files
+...
+001 (1815388.000.000) 2025-04-24 12:25:43 Job executing on host: <10.9.146.107:9618?addrs=10.9.146.107-9618&alias=REDLRADADM23621.ad.medctr.ucla.edu&noUDP&sock=startd_1929_b647>
+	SlotName: slot1_1@REDLRADADM23621.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_d451a4be,GPUs_GPU_ad6186a5 }
+	CondorScratchDir = "/var/lib/condor/execute/dir_2099233"
+	Cpus = 1
+	Disk = 6144
+	GPUs = 2
+	GPUs_GPU_ad6186a5 = [ Id = "GPU-ad6186a5"; ClockMhz = 1545.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "NVIDIA GeForce RTX 2080 Ti"; DeviceUuid = "ad6186a5-e300-bf53-24ac-692710428fdf"; ECCEnabled = false; ComputeUnits = 68; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 10823; MaxSupportedVersion = 12080 ]
+	GPUs_GPU_d451a4be = [ Id = "GPU-d451a4be"; ClockMhz = 1545.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "NVIDIA GeForce RTX 2080 Ti"; DeviceUuid = "d451a4be-3696-4a1d-ecd4-112a71a8f384"; ECCEnabled = false; ComputeUnits = 68; DriverVersion = 12.8; DevicePciBusId = "0000:19:00.0"; GlobalMemoryMb = 10823; MaxSupportedVersion = 12080 ]
+	Memory = 102400
+...
+006 (1815388.000.000) 2025-04-24 12:25:52 Image size of job updated: 100
+	100  -  MemoryUsage of job (MB)
+	103232  -  ResidentSetSize of job (KB)
+...
+006 (1815388.000.000) 2025-04-24 12:30:52 Image size of job updated: 23783
+	23783  -  MemoryUsage of job (MB)
+	24354476  -  ResidentSetSize of job (KB)
+...
+006 (1815388.000.000) 2025-04-24 12:35:53 Image size of job updated: 30620
+	30620  -  MemoryUsage of job (MB)
+	31355312  -  ResidentSetSize of job (KB)
+...
+006 (1815388.000.000) 2025-04-24 12:40:54 Image size of job updated: 38815
+	38815  -  MemoryUsage of job (MB)
+	39747432  -  ResidentSetSize of job (KB)
+...
+006 (1815388.000.000) 2025-04-24 12:45:55 Image size of job updated: 42174
+	42174  -  MemoryUsage of job (MB)
+	43186472  -  ResidentSetSize of job (KB)
+...

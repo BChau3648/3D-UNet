@@ -1,0 +1,48 @@
+000 (1815383.000.000) 2025-04-24 01:22:12 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815383.000.000) 2025-04-24 01:22:28 Started transferring input files
+	Transferring to host: <10.9.146.107:9618?addrs=10.9.146.107-9618&alias=REDLRADADM23621.ad.medctr.ucla.edu&noUDP&sock=slot1_2_2547_5781_5495>
+...
+040 (1815383.000.000) 2025-04-24 01:22:28 Finished transferring input files
+...
+001 (1815383.000.000) 2025-04-24 01:22:29 Job executing on host: <10.9.146.107:9618?addrs=10.9.146.107-9618&alias=REDLRADADM23621.ad.medctr.ucla.edu&noUDP&sock=startd_1929_b647>
+	SlotName: slot1_2@REDLRADADM23621.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_ad6186a5,GPUs_GPU_02ab14df }
+	CondorScratchDir = "/var/lib/condor/execute/dir_1887332"
+	Cpus = 1
+	Disk = 6144
+	GPUs = 2
+	GPUs_GPU_02ab14df = [ Id = "GPU-02ab14df"; ClockMhz = 1545.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "NVIDIA GeForce RTX 2080 Ti"; DeviceUuid = "02ab14df-ae1b-efe7-555f-6bf77e6cb24e"; ECCEnabled = false; ComputeUnits = 68; DriverVersion = 12.8; DevicePciBusId = "0000:67:00.0"; GlobalMemoryMb = 10823; MaxSupportedVersion = 12080 ]
+	GPUs_GPU_ad6186a5 = [ Id = "GPU-ad6186a5"; ClockMhz = 1545.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "NVIDIA GeForce RTX 2080 Ti"; DeviceUuid = "ad6186a5-e300-bf53-24ac-692710428fdf"; ECCEnabled = false; ComputeUnits = 68; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 10823; MaxSupportedVersion = 12080 ]
+	Memory = 12288
+...
+006 (1815383.000.000) 2025-04-24 01:22:38 Image size of job updated: 176
+	176  -  MemoryUsage of job (MB)
+	180768  -  ResidentSetSize of job (KB)
+...
+021 (1815383.000.000) 2025-04-24 01:24:50 Error from starter on slot1_2@REDLRADADM23621.ad.medctr.ucla.edu:
+	Docker job has gone over memory limit of 12288 Mb
+	Code 34 Subcode 0
+...
+004 (1815383.000.000) 2025-04-24 01:24:50 Job was evicted.
+	(0) CPU times
+		Usr 0 00:00:01, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	4856  -  Run Bytes Received By Job
+	Error from slot1_2@REDLRADADM23621.ad.medctr.ucla.edu: Docker job has gone over memory limit of 12288 Mb
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :      513     5120      6144 
+	   GPUs                 :        0        2         2 "GPU-ad6186a5,GPU-02ab14df"
+	   GpusMemory (MB)      :      445                    
+	   Memory (MB)          :      176    12288     12288 
+	   TimeSlotBusy (s)     :      143                    
+...
+012 (1815383.000.000) 2025-04-24 01:24:50 Job was held.
+	Error from slot1_2@REDLRADADM23621.ad.medctr.ucla.edu: Docker job has gone over memory limit of 12288 Mb
+	Code 34 Subcode 0
+...
+009 (1815383.000.000) 2025-04-24 01:29:26 Job was aborted.
+	via condor_rm (by user blchau)
+...

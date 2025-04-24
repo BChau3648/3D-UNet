@@ -1,0 +1,26 @@
+universe=docker
+
+docker_image = registry.cvib.ucla.edu/blchau:3dnet
+docker_pull_policy = always
+
+executable = /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/test_model.sh
+arguments = /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/test_config.yaml
+transfer_input_files = /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/test_config.yaml
+
+should_transfer_files = YES
+
+when_to_transfer_output = ON_EXIT
+
+output = /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/pred_logs/$(cluster).$(process).out
+error = /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/pred_logs/$(cluster).$(process).err
+log = /radraid/blchau/3D-UNet/scripts/hippocampus/checkpoints/first_run-bad_val_loss/pred_logs/$(cluster).$(process).log
+
+request_cpus = 1
+request_gpus = 1
+# request_memory = 16GB
+# request_disk = 200MB
+requirements = (OpSys == "LINUX" && Arch == "X86_64" && GPUMEM > 16000)
++WantGPULab = true
++GPUJobLength = "short"
+
+queue
