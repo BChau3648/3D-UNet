@@ -28,3 +28,97 @@
 	21119  -  MemoryUsage of job (MB)
 	21626708  -  ResidentSetSize of job (KB)
 ...
+006 (1815391.000.000) 2025-04-24 12:53:54 Image size of job updated: 27531
+	27531  -  MemoryUsage of job (MB)
+	28192592  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 12:58:54 Image size of job updated: 36614
+	36614  -  MemoryUsage of job (MB)
+	37493340  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:03:55 Image size of job updated: 41761
+	41761  -  MemoryUsage of job (MB)
+	42764116  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:08:56 Image size of job updated: 46022
+	46022  -  MemoryUsage of job (MB)
+	47126764  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:13:56 Image size of job updated: 49113
+	49113  -  MemoryUsage of job (MB)
+	50292268  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:18:56 Image size of job updated: 53649
+	53649  -  MemoryUsage of job (MB)
+	54936940  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:23:56 Image size of job updated: 57925
+	57925  -  MemoryUsage of job (MB)
+	59316028  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:28:56 Image size of job updated: 63931
+	63931  -  MemoryUsage of job (MB)
+	65465380  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:33:57 Image size of job updated: 71287
+	71287  -  MemoryUsage of job (MB)
+	72998652  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:38:58 Image size of job updated: 76433
+	76433  -  MemoryUsage of job (MB)
+	78268248  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:43:59 Image size of job updated: 79036
+	79036  -  MemoryUsage of job (MB)
+	80933284  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:48:59 Image size of job updated: 82635
+	82635  -  MemoryUsage of job (MB)
+	84619172  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:53:59 Image size of job updated: 86779
+	86779  -  MemoryUsage of job (MB)
+	88861996  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 13:58:59 Image size of job updated: 88739
+	88739  -  MemoryUsage of job (MB)
+	90869228  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 14:03:59 Image size of job updated: 95966
+	95966  -  MemoryUsage of job (MB)
+	98269536  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 14:08:59 Image size of job updated: 99331
+	99331  -  MemoryUsage of job (MB)
+	101715420  -  ResidentSetSize of job (KB)
+...
+006 (1815391.000.000) 2025-04-24 14:13:59 Image size of job updated: 102392
+	102392  -  MemoryUsage of job (MB)
+	104850180  -  ResidentSetSize of job (KB)
+...
+021 (1815391.000.000) 2025-04-24 14:18:22 Error from starter on slot1_2@REDLRADADM14959.ad.medctr.ucla.edu:
+	Docker job has gone over memory limit of 102400 Mb
+	Code 34 Subcode 0
+...
+004 (1815391.000.000) 2025-04-24 14:18:22 Job was evicted.
+	(0) CPU times
+		Usr 0 01:21:13, Sys 0 00:20:11  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	5073  -  Run Bytes Received By Job
+	Error from slot1_2@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 102400 Mb
+	Partitionable Resources :     Usage  Request Allocated Assigned
+	   Cpus                 :      0.00        1         1 
+	   Disk (KB)            :    262        5120      7861 
+	   GPUs                 :      0           2         2 "GPU-41bf3322,GPU-bc66d487"
+	   GpusMemory (MB)      :    753                       
+	   Memory (MB)          : 102392      102400    102400 
+	   TimeSlotBusy (s)     :   5980                       
+...
+012 (1815391.000.000) 2025-04-24 14:18:22 Job was held.
+	Error from slot1_2@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 102400 Mb
+	Code 34 Subcode 0
+...
+009 (1815391.000.000) 2025-04-24 19:53:06 Job was aborted.
+	via condor_rm (by user blchau)
+...

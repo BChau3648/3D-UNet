@@ -28,3 +28,85 @@
 	29608  -  MemoryUsage of job (MB)
 	30319584  -  ResidentSetSize of job (KB)
 ...
+006 (1815390.000.000) 2025-04-24 12:49:55 Image size of job updated: 34779
+	34779  -  MemoryUsage of job (MB)
+	35614552  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 12:54:55 Image size of job updated: 47039
+	47039  -  MemoryUsage of job (MB)
+	48168688  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 12:59:55 Image size of job updated: 51617
+	51617  -  MemoryUsage of job (MB)
+	52856208  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:04:56 Image size of job updated: 57139
+	57139  -  MemoryUsage of job (MB)
+	58510912  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:09:56 Image size of job updated: 62378
+	62378  -  MemoryUsage of job (MB)
+	63876056  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:14:56 Image size of job updated: 71124
+	71124  -  MemoryUsage of job (MB)
+	72831184  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:19:56 Image size of job updated: 77135
+	77135  -  MemoryUsage of job (MB)
+	78986888  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:24:57 Image size of job updated: 80910
+	80910  -  MemoryUsage of job (MB)
+	82852096  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:29:58 Image size of job updated: 85688
+	85688  -  MemoryUsage of job (MB)
+	87745436  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:34:59 Image size of job updated: 90477
+	90477  -  MemoryUsage of job (MB)
+	92649004  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:39:59 Image size of job updated: 95688
+	95688  -  MemoryUsage of job (MB)
+	97984588  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:44:59 Image size of job updated: 98855
+	98855  -  MemoryUsage of job (MB)
+	101228048  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:50:00 Image size of job updated: 101065
+	101065  -  MemoryUsage of job (MB)
+	103490940  -  ResidentSetSize of job (KB)
+...
+006 (1815390.000.000) 2025-04-24 13:55:01 Image size of job updated: 102399
+	102399  -  MemoryUsage of job (MB)
+	104857376  -  ResidentSetSize of job (KB)
+...
+021 (1815390.000.000) 2025-04-24 13:57:57 Error from starter on slot1_1@REDLRADADM14959.ad.medctr.ucla.edu:
+	Docker job has gone over memory limit of 102400 Mb
+	Code 34 Subcode 0
+...
+004 (1815390.000.000) 2025-04-24 13:57:57 Job was evicted.
+	(0) CPU times
+		Usr 0 01:08:23, Sys 0 00:18:34  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	4880  -  Run Bytes Received By Job
+	Error from slot1_1@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 102400 Mb
+	Partitionable Resources :     Usage  Request Allocated Assigned
+	   Cpus                 :      0.00        1         1 
+	   Disk (KB)            :    223        5120      7861 
+	   GPUs                 :      0           2         2 "GPU-814f208a,GPU-aa89f48d"
+	   GpusMemory (MB)      :    753                       
+	   Memory (MB)          : 102399      102400    102400 
+	   TimeSlotBusy (s)     :   4994                       
+...
+012 (1815390.000.000) 2025-04-24 13:57:57 Job was held.
+	Error from slot1_1@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 102400 Mb
+	Code 34 Subcode 0
+...
+009 (1815390.000.000) 2025-04-24 19:53:06 Job was aborted.
+	via condor_rm (by user blchau)
+...

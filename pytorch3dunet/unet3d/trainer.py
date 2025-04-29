@@ -430,6 +430,8 @@ class UNetTrainer:
         with open(f'{file_name}.pkl', 'wb') as f:
             pickle.dump(fig, f)
 
+        plt.close()
+
     def _save_stats_graph(self):
         self._plot_stats('loss')
         self._plot_stats('score')

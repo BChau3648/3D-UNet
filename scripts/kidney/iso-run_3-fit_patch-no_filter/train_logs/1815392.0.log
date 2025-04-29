@@ -20,3 +20,73 @@
 	249  -  MemoryUsage of job (MB)
 	255840  -  ResidentSetSize of job (KB)
 ...
+006 (1815392.000.000) 2025-04-24 12:53:52 Image size of job updated: 22294
+	22294  -  MemoryUsage of job (MB)
+	22829556  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 12:58:52 Image size of job updated: 30389
+	30389  -  MemoryUsage of job (MB)
+	31119036  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:03:53 Image size of job updated: 39415
+	39415  -  MemoryUsage of job (MB)
+	40361356  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:08:54 Image size of job updated: 48130
+	48130  -  MemoryUsage of job (MB)
+	49285180  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:13:54 Image size of job updated: 53231
+	53231  -  MemoryUsage of job (MB)
+	54509324  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:18:54 Image size of job updated: 63123
+	63123  -  MemoryUsage of job (MB)
+	64638268  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:23:54 Image size of job updated: 70141
+	70141  -  MemoryUsage of job (MB)
+	71825060  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:28:54 Image size of job updated: 77666
+	77666  -  MemoryUsage of job (MB)
+	79530580  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:33:55 Image size of job updated: 83913
+	83913  -  MemoryUsage of job (MB)
+	85927520  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:38:56 Image size of job updated: 94611
+	94611  -  MemoryUsage of job (MB)
+	96882444  -  ResidentSetSize of job (KB)
+...
+006 (1815392.000.000) 2025-04-24 13:43:57 Image size of job updated: 101525
+	101525  -  MemoryUsage of job (MB)
+	103962256  -  ResidentSetSize of job (KB)
+...
+021 (1815392.000.000) 2025-04-24 13:47:45 Error from starter on slot1_3@REDLRADADM14959.ad.medctr.ucla.edu:
+	Docker job has gone over memory limit of 102400 Mb
+	Code 34 Subcode 0
+...
+004 (1815392.000.000) 2025-04-24 13:47:45 Job was evicted.
+	(0) CPU times
+		Usr 0 00:48:32, Sys 0 00:12:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	4873  -  Run Bytes Received By Job
+	Error from slot1_3@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 102400 Mb
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :      219     5120      7861 
+	   GPUs                 :        0        2         2 "GPU-cc612718,GPU-d4aea729"
+	   GpusMemory (MB)      :      753                    
+	   Memory (MB)          :   101525   102400    102400 
+	   TimeSlotBusy (s)     :     3542                    
+...
+012 (1815392.000.000) 2025-04-24 13:47:45 Job was held.
+	Error from slot1_3@REDLRADADM14959.ad.medctr.ucla.edu: Docker job has gone over memory limit of 102400 Mb
+	Code 34 Subcode 0
+...
+009 (1815392.000.000) 2025-04-24 19:53:06 Job was aborted.
+	via condor_rm (by user blchau)
+...

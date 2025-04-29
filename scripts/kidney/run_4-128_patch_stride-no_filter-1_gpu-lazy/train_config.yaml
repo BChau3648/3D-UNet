@@ -42,7 +42,7 @@ trainer:
   # model with higher eval score is considered better
   eval_score_higher_is_better: True
   # path to the checkpoint directory
-  checkpoint_dir: /radraid/blchau/3D-UNet/scripts/kidney/iso-run_1-128_patch_stride-no_filter/checkpoints
+  checkpoint_dir: /radraid/blchau/3D-UNet/scripts/kidney/run_4-128_patch_stride-no_filter-1_gpu-lazy/checkpoints
   # path to latest checkpoint; if provided the training will be resumed from that checkpoint
   resume: null
   # path to the best_checkpoint.pytorch; to be used for fine-tuning the model with additional ground truth
@@ -58,7 +58,7 @@ loaders:
   dataset: LazyHDF5Dataset
   # TODO: tune batch size, transforms, and slices
   # batch size
-  batch_size: 2
+  batch_size: 4
   # how many subprocesses to use for data loading
   num_workers: 2
   # path to the raw data within the H5
@@ -73,7 +73,7 @@ loaders:
   train:
     # path to the training datasets
     file_paths:
-      - '/radraid/blchau/data/UCLA/preprocessed/isotropic_train'
+      - '/radraid/blchau/data/UCLA/preprocessed/train'
 
     # SliceBuilder configuration, i.e. how to iterate over the input volume patch-by-patch
     slice_builder:
@@ -119,7 +119,7 @@ loaders:
   val:
     # path to the val datasets
     file_paths:
-      - '/radraid/blchau/data/UCLA/preprocessed/isotropic_val'
+      - '/radraid/blchau/data/UCLA/preprocessed/val'
 
     # SliceBuilder configuration, i.e. how to iterate over the input volume patch-by-patch
     slice_builder:

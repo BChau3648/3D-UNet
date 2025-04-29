@@ -2,12 +2,12 @@ todo:
 parameter tuning --> patch shape, stride, filter slice
 - try half stride
 
+MAKE PREDICTION AND EVALUATION SCRIPT (DICE SCORE AND HAUSDORFF DISTANCE)
 
-split train and val set and run training (check patch size first)
-
-check transformations on data
-
-use 2 gpu with maybe 10gb of memory
+MAYBE TRACK GPU USAGE DURING TRAINING (AND DATA LOADING)
+- try to see if zero padding input images will aversely affect training!
+- check to see if training from patches is even widely used! (it should be)
+- try to see why training with 2 gpus with 10gb is slower than 1 gpu with 16gb
 
 look at predictions from first run and calculate dice score and hausdorff distance
 

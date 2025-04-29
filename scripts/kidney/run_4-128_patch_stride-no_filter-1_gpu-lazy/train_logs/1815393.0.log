@@ -1,0 +1,106 @@
+000 (1815393.000.000) 2025-04-24 20:03:35 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815393.000.000) 2025-04-24 20:03:47 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_1_4369_1b0b_8786>
+...
+040 (1815393.000.000) 2025-04-24 20:03:47 Finished transferring input files
+...
+001 (1815393.000.000) 2025-04-24 20:03:48 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3632_d410>
+	SlotName: slot1_1@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_814f208a }
+	CondorScratchDir = "/var/lib/condor/execute/dir_3410784"
+	Cpus = 1
+	Disk = 7861
+	GPUs = 1
+	GPUs_GPU_814f208a = [ Id = "GPU-814f208a"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "814f208a-0084-e091-cffb-dc81d3df4ee3"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 51200
+...
+006 (1815393.000.000) 2025-04-24 20:03:57 Image size of job updated: 245
+	245  -  MemoryUsage of job (MB)
+	251660  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:08:57 Image size of job updated: 2237
+	2237  -  MemoryUsage of job (MB)
+	2291136  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:13:58 Image size of job updated: 2482
+	2482  -  MemoryUsage of job (MB)
+	2542164  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:18:59 Image size of job updated: 2621
+	2621  -  MemoryUsage of job (MB)
+	2684056  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:24:00 Image size of job updated: 2817
+	2817  -  MemoryUsage of job (MB)
+	2884616  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:34:00 Image size of job updated: 3043
+	3043  -  MemoryUsage of job (MB)
+	3116264  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:39:00 Image size of job updated: 3214
+	3214  -  MemoryUsage of job (MB)
+	3291908  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:49:00 Image size of job updated: 3230
+	3230  -  MemoryUsage of job (MB)
+	3307624  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 20:59:00 Image size of job updated: 3240
+	3240  -  MemoryUsage of job (MB)
+	3318680  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 21:59:07 Image size of job updated: 3318
+	3318  -  MemoryUsage of job (MB)
+	3398260  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 22:04:08 Image size of job updated: 3406
+	3406  -  MemoryUsage of job (MB)
+	3488292  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-24 23:19:15 Image size of job updated: 3411
+	3411  -  MemoryUsage of job (MB)
+	3493208  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-25 00:09:22 Image size of job updated: 3412
+	3412  -  MemoryUsage of job (MB)
+	3494376  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-25 11:35:34 Image size of job updated: 3424
+	3424  -  MemoryUsage of job (MB)
+	3506328  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-25 11:50:36 Image size of job updated: 3447
+	3447  -  MemoryUsage of job (MB)
+	3530340  -  ResidentSetSize of job (KB)
+...
+006 (1815393.000.000) 2025-04-25 12:45:41 Image size of job updated: 3460
+	3460  -  MemoryUsage of job (MB)
+	3543808  -  ResidentSetSize of job (KB)
+...
+040 (1815393.000.000) 2025-04-25 20:18:19 Started transferring output files
+...
+040 (1815393.000.000) 2025-04-25 20:18:19 Finished transferring output files
+...
+005 (1815393.000.000) 2025-04-25 20:18:19 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 2 00:19:43, Sys 0 01:31:55  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 2 00:19:43, Sys 0 01:31:55  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	3949506  -  Run Bytes Sent By Job
+	5018  -  Run Bytes Received By Job
+	3949506  -  Total Bytes Sent By Job
+	5018  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0           1         1 
+	   Disk (KB)            :  3906        5120      7861 
+	   GPUs                 :     0.56        1         1 "GPU-814f208a"
+	   GpusMemory (MB)      : 19251                       
+	   Memory (MB)          :  3460       51200     51200 
+	   TimeExecute (s)      : 87271                       
+	   TimeSlotBusy (s)     : 87272                       
+
+	Job terminated of its own accord at 2025-04-26T03:18:19Z with exit-code 0.
+...

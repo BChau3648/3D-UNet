@@ -16,10 +16,10 @@ error = /radraid/blchau/3D-UNet/scripts/kidney/iso-run_2-128_patch_stride-filter
 log = /radraid/blchau/3D-UNet/scripts/kidney/iso-run_2-128_patch_stride-filter/train_logs/$(cluster).$(process).log
 
 request_cpus = 1
-request_gpus = 2
-request_memory = 100GB
+request_gpus = 1
+request_memory = 30GB
 request_disk = 5MB
-gpus_minimum_memory = 10GB
+gpus_minimum_memory = 16GB
 requirements = (OpSys == "LINUX" && Arch == "X86_64")
 
 ############################################################
