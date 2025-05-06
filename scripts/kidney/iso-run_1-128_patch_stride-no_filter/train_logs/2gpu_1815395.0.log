@@ -1,0 +1,26 @@
+000 (1815395.000.000) 2025-05-06 15:25:36 Job submitted from host: <10.9.86.41:9618?addrs=10.9.86.41-9618&alias=REDLRADADM14958.ad.medctr.ucla.edu&noUDP&sock=schedd_2970_c05e>
+...
+040 (1815395.000.000) 2025-05-06 15:26:00 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_1_4369_1b0b_20578>
+...
+040 (1815395.000.000) 2025-05-06 15:26:00 Finished transferring input files
+...
+001 (1815395.000.000) 2025-05-06 15:26:01 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3632_d410>
+	SlotName: slot1_1@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_814f208a,GPUs_GPU_aa89f48d }
+	CondorScratchDir = "/var/lib/condor/execute/dir_3023686"
+	Cpus = 1
+	Disk = 7861
+	GPUs = 2
+	GPUs_GPU_814f208a = [ Id = "GPU-814f208a"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "814f208a-0084-e091-cffb-dc81d3df4ee3"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1A:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	GPUs_GPU_aa89f48d = [ Id = "GPU-aa89f48d"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "aa89f48d-f38a-c984-f7ad-689c5bf4241a"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1B:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 20480
+...
+006 (1815395.000.000) 2025-05-06 15:31:15 Image size of job updated: 9767
+	9767  -  MemoryUsage of job (MB)
+	10001972  -  ResidentSetSize of job (KB)
+...
+006 (1815395.000.000) 2025-05-06 15:36:16 Image size of job updated: 9960
+	9960  -  MemoryUsage of job (MB)
+	10199976  -  ResidentSetSize of job (KB)
+...

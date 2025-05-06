@@ -191,3 +191,44 @@
 	12385  -  MemoryUsage of job (MB)
 	12682412  -  ResidentSetSize of job (KB)
 ...
+006 (1815394.000.000) 2025-04-29 19:39:08 Image size of job updated: 12389
+	12389  -  MemoryUsage of job (MB)
+	12686352  -  ResidentSetSize of job (KB)
+...
+006 (1815394.000.000) 2025-04-29 22:14:23 Image size of job updated: 12408
+	12408  -  MemoryUsage of job (MB)
+	12706608  -  ResidentSetSize of job (KB)
+...
+006 (1815394.000.000) 2025-04-29 22:19:24 Image size of job updated: 12415
+	12415  -  MemoryUsage of job (MB)
+	12713856  -  ResidentSetSize of job (KB)
+...
+006 (1815394.000.000) 2025-05-01 01:17:02 Image size of job updated: 12435
+	12435  -  MemoryUsage of job (MB)
+	12734348  -  ResidentSetSize of job (KB)
+...
+040 (1815394.000.000) 2025-05-01 05:04:17 Started transferring output files
+...
+040 (1815394.000.000) 2025-05-01 05:04:18 Finished transferring output files
+...
+005 (1815394.000.000) 2025-05-01 05:04:18 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 11 02:40:32, Sys 0 09:09:05  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 11 02:40:32, Sys 0 09:09:05  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	32629776  -  Run Bytes Sent By Job
+	5031  -  Run Bytes Received By Job
+	32629776  -  Total Bytes Sent By Job
+	5031  -  Total Bytes Received By Job
+	Partitionable Resources :     Usage  Request Allocated Assigned
+	   Cpus                 :      0.00        1         1 
+	   Disk (KB)            :  31914        5120      7861 
+	   GPUs                 :      0.47        1         1 "GPU-aa89f48d"
+	   GpusMemory (MB)      :  10121                       
+	   Memory (MB)          :  12435      102400    102400 
+	   TimeExecute (s)      : 550649                       
+	   TimeSlotBusy (s)     : 550651                       
+
+	Job terminated of its own accord at 2025-05-01T12:04:17Z with exit-code 0.
+...
