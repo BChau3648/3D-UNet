@@ -1,0 +1,47 @@
+000 (1284396.000.000) 2025-05-14 15:04:05 Job submitted from host: <10.9.146.9:9618?addrs=10.9.146.9-9618&alias=REDLRADADM23589.ad.medctr.ucla.edu&noUDP&sock=schedd_3600_e108>
+...
+040 (1284396.000.000) 2025-05-14 15:04:28 Started transferring input files
+	Transferring to host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=slot1_4_4369_1b0b_23183>
+...
+040 (1284396.000.000) 2025-05-14 15:04:28 Finished transferring input files
+...
+001 (1284396.000.000) 2025-05-14 15:04:29 Job executing on host: <10.9.86.42:9618?addrs=10.9.86.42-9618&alias=REDLRADADM14959.ad.medctr.ucla.edu&noUDP&sock=startd_3632_d410>
+	SlotName: slot1_4@REDLRADADM14959.ad.medctr.ucla.edu
+	AvailableGPUs = { GPUs_GPU_cc612718,GPUs_GPU_d4aea729 }
+	CondorScratchDir = "/var/lib/condor/execute/dir_3870809"
+	Cpus = 1
+	Disk = 7861
+	GPUs = 2
+	GPUs_GPU_cc612718 = [ Id = "GPU-cc612718"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "cc612718-d67e-4984-cd80-f0907032157c"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:1E:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	GPUs_GPU_d4aea729 = [ Id = "GPU-d4aea729"; ClockMhz = 1770.0; Capability = 7.5; CoresPerCU = 64; DeviceName = "Quadro RTX 8000"; DeviceUuid = "d4aea729-b5db-9a0f-8b56-41185ba54b9a"; ECCEnabled = false; ComputeUnits = 72; DriverVersion = 12.8; DevicePciBusId = "0000:3D:00.0"; GlobalMemoryMb = 48403; MaxSupportedVersion = 12080 ]
+	Memory = 20480
+...
+006 (1284396.000.000) 2025-05-14 15:09:45 Image size of job updated: 79248
+	25  -  MemoryUsage of job (MB)
+	25480  -  ResidentSetSize of job (KB)
+...
+006 (1284396.000.000) 2025-05-14 15:14:45 Image size of job updated: 79380
+	25  -  MemoryUsage of job (MB)
+	25480  -  ResidentSetSize of job (KB)
+...
+006 (1284396.000.000) 2025-05-14 15:30:17 Image size of job updated: 79380
+	207  -  MemoryUsage of job (MB)
+	212252  -  ResidentSetSize of job (KB)
+...
+004 (1284396.000.000) 2025-05-14 15:30:17 Job was evicted.
+	(0) CPU times
+		Usr 0 00:00:03, Sys 0 00:00:02  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	5031  -  Run Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         1 
+	   Disk (KB)            :    50        5120      7861 
+	   GPUs                 :     0           2         2 "GPU-cc612718,GPU-d4aea729"
+	   GpusMemory (MB)      :   753                       
+	   Memory (MB)          :   207       20480     20480 
+	   TimeExecute (s)      :  1548                       
+	   TimeSlotBusy (s)     :  1549                       
+...
+009 (1284396.000.000) 2025-05-14 15:30:17 Job was aborted.
+...

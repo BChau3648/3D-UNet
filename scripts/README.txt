@@ -1,4 +1,8 @@
 todo:
+- FIGURE OUT WHY 2 GPUS IS SLOWER; driver version=12.8 while cuda runtime is 11.8 so it should be compatible
+  - first try going interactive with only 1 gpu to see what is the difference
+  - with 2 gpus, device_count = 2, but when trying to see device information there is "no cuda GPUs available"
+
 parameter tuning --> patch shape, stride, filter slice
 - try half stride
 
